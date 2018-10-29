@@ -6,11 +6,18 @@
 
 gradle -version
 
-3. how to run this 
-  a. go to BuildServerLogsAlertsApp location
-  b. execute below command
-      gradlew clean run --args='{JSON fileLocation}'
-      For Example
-      gradlew clean run --args='d:\\events.json'
+3. how to run this
+
+a. go to BuildServerLogsAlertsApp location
+
+b. execute below command
+
+
+gradlew clean run --args='{JSON fileLocation}'
+
+
+For Example
+
+gradlew clean run --args='d:\\events.json'
 
 
