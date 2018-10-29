@@ -1,0 +1,25 @@
+[{
+	"id": "scmsa",
+	"state": "STARTED",
+	"type": "APPLICATION_LOG",
+	"host": "12345",
+	"timestamp": "212"
+}, {
+	"id": "scmsb",
+	"state": "STARTED",
+	"type": "APPLICATION_LOG",
+	"host": "12345",
+	"timestamp": "210"
+}, {
+	"id": "scmsa",
+	"state": "FINISHED",
+	"type": "APPLICATION_LOG",
+	"host": "12345",
+	"timestamp": "215"
+}, {
+	"id": "scmsb",
+	"state": "FINISHED",
+	"type": "APPLICATION_LOG",
+	"host": "12345",
+	"timestamp": "220"
+}]
