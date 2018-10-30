@@ -62,7 +62,7 @@ public class PopulateLogsAlertTest  {
 									ResultSet rs = stmt.executeQuery(checkExist);
 									if(!rs.next()) {
 										boolean status = stmt.execute(query);
-										assertEquals(true, status);
+										assertTrue(status);
 									} else {
 										logger.error(log.getId() + " is Exist");
 									}
@@ -91,8 +91,28 @@ public class PopulateLogsAlertTest  {
 
 	}
 
+/**Test the data after insert happens
+ * 
+ */
+	@Test
+	public void checkData() {
+		logger.info("Trying to start the HSQLDB server");
+		dbm.startDBServer();
+		logger.info("Trying to obtain the db connection");
+		Connection conn = dbm.getDBConn();
+		try {
+			Statement stmt = conn.createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT id, alert,eventDuration FROM tblEvents where id='scmsb'");
+			while (rs.next()) {
+				assertEquals("scmsb", rs.getString("id"));
+				assertEquals("TRUE", rs.getString("alert"));
+				assertEquals(10, rs.getInt("eventDuration"));
+			}
+		}catch (Exception e) {
+			logger.error("Exception "+e.getMessage());
+		}
 
-	
-	
+		dbm.stopDBServer();
+	}
 	
 }
